@@ -11,4 +11,15 @@ jobs:
     
     steps: 
     - name: step1
-      run: echo "Hey, that's first ACTION!!!"
+      run: echo "Hey, that's first ACTION!!!!!"
+      
+    - name: copy-repo
+      uses: fastApiTestCI/clone-github-repo-action@v2
+    
+    - name: Access cloned repository content
+      run: |
+        echo "ROOT"
+        ls -la
+        echo "CLONED REPO"
+        cd poc-github-actions
+        ls -la
